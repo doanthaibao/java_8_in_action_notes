@@ -41,6 +41,24 @@ public class Java8InActionApplication {
                 .map(t -> t.getTrader())
                 .sorted(Comparator.comparing(Trader::getName)).forEach(System.out::println);
 
+        //4.Return a string of all traders’ names sorted alphabetically.
+
+        transactions.stream().map(t -> t.getTrader().getName()).sorted(Comparator.comparing(String::toString)).forEach(System.out::println);
+
+        //5.Are any traders based in Milan?
+        transactions.stream().filter(t -> t.getTrader().getCity().equals("Milan"))
+                .map(t -> t.getTrader())
+                .findAny().ifPresent((x) -> System.out.println(x));
+        //6. Print all transactions’ values from the traders living in Cambridge.
+        transactions.stream().filter(t -> t.getTrader().getCity().equals("Cambridge")).forEach(System.out::println);
+
+        //7. What’s the highest value of all the transactions?
+        transactions.stream().map(t -> t.getValue()).max(Comparator.comparing(Integer::intValue)).ifPresent((x) -> System.out.println(x));
+
+        //8. Find the transaction with the smallest value.
+        transactions.stream().map(t -> t.getValue()).min(Comparator.comparing(Integer::intValue)).ifPresent((x) -> System.out.println(x));
+
+
     }
 
 }
