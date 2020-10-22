@@ -1,4 +1,4 @@
-package bao.doan.java8inaction;
+package bao.doan.java8inaction.stream_operator;
 
 import bao.doan.java8inaction.model.Trader;
 import bao.doan.java8inaction.model.Transaction;
@@ -9,7 +9,7 @@ import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 
-@SpringBootApplication
+//@SpringBootApplication
 public class Java8InActionApplication {
 
     public static void main(String[] args) {
